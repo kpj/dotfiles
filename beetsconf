@@ -1,0 +1,17 @@
+directory: /mnt/HD/Multimedia/Musik/data
+library: /mnt/HD/Multimedia/Musik/musiclibrary.blb
+
+plugins: smartplaylist mpdupdate lyrics lastgenre fetchart embedart fromfilename
+
+smartplaylist:
+	playlist_dir: ~/.mpd/playlists/
+	playlists:
+		- query: 'genre:trance'
+			name: trance.m3u
+
+import:
+	quiet_fallback: asis
+
+mpdupdate:
+	host: localhost
+	port: 6600
