@@ -1,17 +1,20 @@
 directory: /mnt/HD/Multimedia/Musik/data
 library: /mnt/HD/Multimedia/Musik/musiclibrary.blb
+pluginpath: ~/.beet/plugins
 
 plugins: smartplaylist mpdupdate lyrics lastgenre fetchart embedart fromfilename
 
 smartplaylist:
-	playlist_dir: ~/.mpd/playlists/
-	playlists:
-		- query: 'genre:trance'
-			name: trance.m3u
+  playlist_dir: ~/.mpd/playlists/
+  playlists:
+    - query: 'genre:trance'
+      name: trance.m3u
+    - query: 'album:club sounds'
+      name: club_sounds.m3u
 
 import:
-	quiet_fallback: asis
+  quiet_fallback: asis
 
 mpdupdate:
-	host: localhost
-	port: 6600
+  host: localhost
+  port: 6600
