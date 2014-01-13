@@ -2,9 +2,7 @@ URxvt.background: black
 URxvt.foreground: white
 
 URxvt.perl-lib: /home/kpj/.urxvt/
-URxvt.perl-ext-common: default,vtwheel,matcher,clipboard
-#URxvt.urlLauncher: chromium
-#URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,vtwheel,clipboard
 
 URxvt.print-pipe: cat > /dev/null
 URxvt.scrollstyle: plain
