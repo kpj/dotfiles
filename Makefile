@@ -3,6 +3,7 @@ LINK := ln -fs
 USE_VIM = yes
 USE_MPD = yes
 USE_BEET = yes
+USE_X = yes
 
 .PHONY: install
 
@@ -15,4 +16,7 @@ ifeq ($(USE_MPD),yes)
 endif
 ifeq ($(USE_BEET),yes)
 	$(LINK) $(PWD)/beetsconf $(HOME)/.config/beets/config.yaml
+endif
+ifeq ($(USE_X),yes)
+	$(LINK) $(PWD)/Xdefaults $(HOME)/.Xdefaults
 endif
