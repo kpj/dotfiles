@@ -2,12 +2,14 @@
 syntax on
 
 " indentation
-set autoindent
-set cindent
+"set autoindent
+"set cindent
+filetype plugin indent on
 
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
+"set noexpandtab
+set expandtab
 
 " fix for my plugins
 set laststatus=2
@@ -59,5 +61,5 @@ augroup END
 """"""""""""""
 " My plugins "
 """"""""""""""
-"set nu
+set nu
 "NERDTree
