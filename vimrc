@@ -1,10 +1,28 @@
 " syntax highlighting
 syntax on
 
+" Vundle stuff
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" Own plugins (Commands: PluginList, PluginInstall)
+
+Plugin 'bling/vim-airline'
+Plugin 'majutsushi/tagbar'
+
+" End
+call vundle#end()
+filetype plugin indent on
+
 " indentation
 "set autoindent
 "set cindent
-filetype plugin indent on
+
+" Shortcuts
+nmap <F2> :TagbarToggle<CR>
 
 set tabstop=4
 set shiftwidth=4
