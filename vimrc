@@ -37,7 +37,7 @@ set laststatus=2
 " improved search
 set incsearch
 set hlsearch
-nnoremap <CR> :nohlsearch<CR><CR> " disable highlighting on enter
+nnoremap <CR> :nohlsearch<CR><CR> " disable highlighting on <Return>
 set ignorecase " case insensitive search
 set smartcase " only case sensitive if uppercase letter contained (with above)
 
