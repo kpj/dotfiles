@@ -37,6 +37,9 @@ set laststatus=2
 " improved search
 set incsearch
 set hlsearch
+nnoremap <CR> :nohlsearch<CR><CR> " disable highlighting on enter
+set ignorecase " case insensitive search
+set smartcase " only case sensitive if uppercase letter contained (with above)
 
 " something
 let &t_SI .= "\<Esc>[?2004h"
