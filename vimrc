@@ -1,6 +1,3 @@
-" syntax highlighting
-syntax on
-
 " Vundle stuff
 set nocompatible
 filetype off
@@ -14,10 +11,17 @@ Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
+Plugin 'altercation/vim-colors-solarized'
 
 " End
 call vundle#end()
 filetype plugin indent on
+
+" syntax highlighting
+syntax on
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 " indentation
 "set autoindent
