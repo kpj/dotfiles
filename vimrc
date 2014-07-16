@@ -11,7 +11,7 @@ Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'sickill/vim-monokai'
 
 " End
 call vundle#end()
@@ -21,7 +21,7 @@ filetype plugin indent on
 syntax on
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme monokai
 
 " indentation
 "set autoindent
