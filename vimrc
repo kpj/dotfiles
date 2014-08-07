@@ -8,10 +8,13 @@ Plugin 'gmarik/Vundle.vim'
 " Own plugins (Commands: PluginList, PluginInstall)
 
 Plugin 'bling/vim-airline'
-Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'sickill/vim-monokai'
+Plugin 'Townk/vim-autoclose'
+if executable('ctags')
+    Plugin 'majutsushi/tagbar'
+endif
 
 " End
 call vundle#end()
