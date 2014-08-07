@@ -15,6 +15,7 @@ Plugin 'Townk/vim-autoclose'
 if executable('ctags')
     Plugin 'majutsushi/tagbar'
 endif
+Plugin 'DetectIndent'
 
 " End
 call vundle#end()
