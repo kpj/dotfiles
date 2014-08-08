@@ -1,11 +1,12 @@
-" Vundle stuff
+""""""""""""""
+" Vundle Stuff
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-" Own plugins (Commands: PluginList, PluginInstall)
+" own plugins (Commands: PluginList, PluginInstall)
 
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
@@ -16,43 +17,50 @@ if executable('ctags')
     Plugin 'majutsushi/tagbar'
 endif
 
-" End
+" end
 call vundle#end()
 filetype plugin indent on
 
-" syntax highlighting
+"""""""""""""""""""""
+" Syntax Highlighting
 syntax on
 let g:solarized_termcolors=256
 set background=dark
 colorscheme monokai
 
-" indentation
+"""""""""""""
+" Indentation
 "set autoindent
 "set cindent
-
-" Shortcuts
-nmap <F2> :TagbarToggle<CR>
-
 set tabstop=4
 set shiftwidth=4
 "set noexpandtab
 set expandtab
 
-" fix for my plugins
-set laststatus=2
+"""""""""""
+" Shortcuts
+nmap <F2> :TagbarToggle<CR>
 
-" improved search
+"""""""""""""""""""""""""""
+" vim-airline Configuration
+set laststatus=2
+set timeoutlen=50 " reduce lag when switching from INSERT to NORMAL
+
+"""""""""""""""""
+" Improved Search
 set incsearch
 set hlsearch
 nnoremap <CR> :nohlsearch<CR><CR> " disable highlighting on <Return>
 set ignorecase " case insensitive search
 set smartcase " only case sensitive if uppercase letter contained (with above)
 
-" something
+"""""""""""
+" Something
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
-" auto paste mode
+"""""""""""""""""
+" Auto Paste Mode
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
@@ -60,7 +68,8 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-" remember last position in file
+""""""""""""""""""""""""""""""""
+" Remember last Position in File
 set viminfo='10,\"100,:20,%,n/tmp/viminfo
 augroup JumpCursorOnEdit
   au!
@@ -87,9 +96,7 @@ augroup JumpCursorOnEdit
     \ endif                 
 augroup END
 
-
-""""""""""""""
-" My plugins "
-""""""""""""""
+""""""
+" Misc
 set nu
 "NERDTree
