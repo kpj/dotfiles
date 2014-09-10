@@ -4,6 +4,7 @@ USE_VIM = yes
 USE_MPD = yes
 USE_BEET = yes
 USE_X = yes
+USE_BASH = yes
 
 .PHONY: install
 
@@ -19,4 +20,7 @@ ifeq ($(USE_BEET),yes)
 endif
 ifeq ($(USE_X),yes)
 	$(LINK) $(PWD)/Xdefaults $(HOME)/.Xdefaults
+endif
+ifeq ($(USE_BASH),yes)
+	$(LINK) $(PWD)/bashrc $(HOME)/.bashrc_custom
 endif
