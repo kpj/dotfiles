@@ -12,6 +12,8 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'sickill/vim-monokai'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 if executable('ctags')
     Plugin 'majutsushi/tagbar'
 endif
