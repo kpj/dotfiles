@@ -15,6 +15,6 @@ export EDITOR=vim
 alias ll='ls -lh'
 alias ..='cd ..'
 
-alias mpl='mplayer -playlist <(find "$PWD" -type f | shuf)'
+alias mpl='mpv --no-audio-display -playlist <(find "$PWD" -type f | shuf)'
 alias uncl='unclutter -idle 1'
 alias slideshow='feh -FZ *'
