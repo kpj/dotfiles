@@ -1,3 +1,4 @@
+! Other stuff
 URxvt.background: black
 URxvt.foreground: white
 
@@ -14,9 +15,9 @@ URxvt.secondaryScroll: False
 URxvtKlein.font: xft:DejaVu Sans Mono:bold:pixelsize=6
 URxvtGrosz.font: xft:DejaVu Sans Mono:bold:pixelsize=30
 
-# fix dark blue
+! fix dark blue
 URxvt.color4: #71C5F4
 URxvt.color12: #67CDE9
 
-# notifications
+! notifications
 URxvt.urgentOnBell: True
