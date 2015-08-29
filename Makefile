@@ -5,6 +5,7 @@ USE_MPD = yes
 USE_BEET = yes
 USE_X = yes
 USE_BASH = yes
+USE_XBINDKEYS = yes
 
 .PHONY: install
 
@@ -23,4 +24,7 @@ ifeq ($(USE_X),yes)
 endif
 ifeq ($(USE_BASH),yes)
 	$(LINK) $(PWD)/bashrc $(HOME)/.bashrc_custom
+endif
+ifeq ($(USE_XBINDKEYS),yes)
+	$(LINK) $(PWD)/xbindkeysrc $(HOME)/.xbindkeysrc
 endif
