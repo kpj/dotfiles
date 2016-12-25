@@ -27,10 +27,4 @@ alias mpl='mpv --no-audio-display -playlist <(find "$PWD" -type f | shuf)'
 alias uncl='unclutter -idle 1'
 alias slideshow='feh -FZ *'
 
-function compile_latex() {
-    # consider latexmk -pvc
-    fname="${1-main.tex}"
-    cmd="latexmk -pdf -halt-on-error -shell-escape "$fname""
-    $cmd
-    while inotifywait -e modify "$fname" ; do $cmd ; done
-}
+alias compile_latex='latexmk -pvc -auxdir=tmp -outdir=tmp -pdf -halt-on-error -shell-escape'
