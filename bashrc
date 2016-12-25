@@ -8,6 +8,14 @@
 export EDITOR=vim
 
 
+###########
+# History #
+###########
+
+export HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
+
+
 ##################
 # Useful Aliases #
 ##################
