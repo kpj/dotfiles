@@ -9,7 +9,7 @@ URxvt.print-pipe: cat > /dev/null
 URxvt.scrollstyle: plain
 URxvt.scrollBar: False
 URXvt.scrollTtyOutput: False
-URxvt.saveLines: 1000
+URxvt.saveLines: 5000
 URxvt.secondaryScroll: False
 
 URxvtKlein.font: xft:DejaVu Sans Mono:bold:pixelsize=6
