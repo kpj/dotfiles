@@ -2,6 +2,7 @@
 #  * '~/.muttrc_private' defines the variables my_gpg_name, my_mail_address
 #  * '~/.mutt_pw.gpg' contains IMAP and SMTP passwords
 #  * mutt-solarized-git is installed
+#  * twmnd running
 
 
 # load external files
@@ -53,3 +54,8 @@ set strict_threads
 # neomutt specific
 set sidebar_visible
 set mail_check_stats
+
+
+# mail-fetch improvements
+bind index "^" imap-fetch-mail
+set new_mail_command="twmnc --bg red --fg black -t mutt -c 'new mail' &"
