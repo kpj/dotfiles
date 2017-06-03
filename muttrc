@@ -1,0 +1,52 @@
+# Assumes that '~/.muttrc_private' defines that variables my_gpg_name, my_mail_address
+# Assumes that '~/.mutt_pw.gpg' contains IMAP and SMTP passwords
+
+
+# load external files
+source ~/.muttrc_private
+set my_password=`gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mutt_pw.gpg`
+
+
+# IMAP setup
+set folder             = imaps://imap.gmail.com/
+set imap_user          = $my_mail_address
+set imap_pass          = $my_password
+set spoolfile          = +INBOX
+set header_cache       = ~/.cache/mutt
+set message_cachedir   = ~/.cache/mutt
+set postponed          = "+[Gmail]/Drafts"
+
+set imap_check_subscribed
+unset imap_passive
+unset record
+
+
+# SMTP setup
+set realname = $my_gpg_name
+set from     = $my_mail_address
+set smtp_url = smtps://$imap_user:$imap_pass@smtp.gmail.com
+
+set use_from
+set ssl_force_tls
+
+
+# GPG setup
+set pgp_sign_as     = $my_gpg_name
+set pgp_timeout     = 60
+
+#set crypt_autoencrypt
+set crypt_autosign
+set crypt_replyencrypt
+set crypt_replysignencrypted
+set crypt_verify_sig
+set crypt_use_gpgme
+
+
+# interface tweaks
+set sort = threads
+set strict_threads
+
+
+# neomutt specific
+set sidebar_visible
+set mail_check_stats

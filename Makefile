@@ -6,6 +6,7 @@ USE_BEET = yes
 USE_X = yes
 USE_BASH = yes
 USE_XBINDKEYS = yes
+USE_MUTT = yes
 
 .PHONY: install
 
@@ -27,4 +28,7 @@ ifeq ($(USE_BASH),yes)
 endif
 ifeq ($(USE_XBINDKEYS),yes)
 	$(LINK) $(PWD)/xbindkeysrc $(HOME)/.xbindkeysrc
+endif
+ifeq ($(USE_MUTT),yes)
+	$(LINK) $(PWD)/muttrc $(HOME)/.muttrc
 endif
