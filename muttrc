@@ -1,9 +1,12 @@
-# Assumes that '~/.muttrc_private' defines that variables my_gpg_name, my_mail_address
-# Assumes that '~/.mutt_pw.gpg' contains IMAP and SMTP passwords
+# Assumes that
+#  * '~/.muttrc_private' defines the variables my_gpg_name, my_mail_address
+#  * '~/.mutt_pw.gpg' contains IMAP and SMTP passwords
+#  * mutt-solarized-git is installed
 
 
 # load external files
 source ~/.muttrc_private
+source /usr/share/doc/mutt/colors/solarized/mutt-colors-solarized-light-256.muttrc
 set my_password=`gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mutt_pw.gpg`
 
 
