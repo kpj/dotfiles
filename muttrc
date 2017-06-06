@@ -54,6 +54,10 @@ set strict_threads
 # neomutt specific
 set sidebar_visible
 
+bind index,pager \CP sidebar-prev  # Ctrl-Shift-P - Previous Mailbox
+bind index,pager \CN sidebar-next  # Ctrl-Shift-N - Next Mailbox
+bind index,pager \CO sidebar-open  # Ctrl-Shift-O - Open Highlighted Mailbox
+
 
 # mail-fetch improvements
 set timeout    = 30 # how often to check mail without key-presses
