@@ -64,3 +64,4 @@ set timeout    = 30 # how often to check mail without key-presses
 set mail_check = 20 # how often to look for new mail
 bind index G imap-fetch-mail
 set new_mail_command="twmnc --bg red --fg black -t mutt -c 'new mail' &"
+timeout-hook 'exec sync-mailbox'
