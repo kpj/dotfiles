@@ -7,6 +7,7 @@ USE_X = yes
 USE_BASH = yes
 USE_XBINDKEYS = yes
 USE_MUTT = yes
+USE_TMUX = yes
 
 .PHONY: install
 
@@ -31,4 +32,7 @@ ifeq ($(USE_XBINDKEYS),yes)
 endif
 ifeq ($(USE_MUTT),yes)
 	$(LINK) $(PWD)/muttrc $(HOME)/.muttrc
+endif
+ifeq ($(USE_TMUX),yes)
+	$(LINK) $(PWD)/tmux $(HOME)/.tmux.conf
 endif
