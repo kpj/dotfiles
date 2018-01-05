@@ -30,3 +30,7 @@ alias slideshow='feh -FZ *'
 alias compile_latex='latexmk -pvc -auxdir=tmp -outdir=tmp -pdf -halt-on-error -shell-escape'
 
 alias pip_update_all='pip freeze --local | grep -v "^\-e" | cut -d = -f 1  | xargs -n1 pip install --upgrade --user'
+
+function pdfcrop_self {
+    pdfcrop "$1" /tmp/foo.pdf && mv /tmp/foo.pdf "$1"
+}
