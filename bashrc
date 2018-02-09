@@ -37,3 +37,11 @@ function pdfcrop_self {
         pdfcrop "$var" /tmp/foo.pdf && mv /tmp/foo.pdf "$var"
     done
 }
+
+function bak {
+    for fname in "$@"; do
+        fname_bak="${fname}.bak"
+        echo "\"$fname\" -> \"$fname_bak\""
+        mv "$fname" "$fname_bak"
+    done
+}
