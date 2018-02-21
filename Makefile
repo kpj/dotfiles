@@ -8,6 +8,7 @@ USE_BASH = yes
 USE_XBINDKEYS = yes
 USE_MUTT = yes
 USE_TMUX = yes
+USE_IPYTHON = yes
 
 .PHONY: install
 
@@ -35,4 +36,7 @@ ifeq ($(USE_MUTT),yes)
 endif
 ifeq ($(USE_TMUX),yes)
 	$(LINK) $(PWD)/tmux $(HOME)/.tmux.conf
+endif
+ifeq ($(USE_IPYTHON),yes)
+	$(LINK) $(PWD)/ipython_config.py $(HOME)/.ipython/profile_default/ipython_config.py
 endif
