@@ -9,6 +9,7 @@ USE_XBINDKEYS = yes
 USE_MUTT = yes
 USE_TMUX = yes
 USE_IPYTHON = yes
+USE_I3STATUS = yes
 
 .PHONY: install
 
@@ -39,4 +40,7 @@ ifeq ($(USE_TMUX),yes)
 endif
 ifeq ($(USE_IPYTHON),yes)
 	$(LINK) $(PWD)/ipython_config.py $(HOME)/.ipython/profile_default/ipython_config.py
+endif
+ifeq ($(USE_I3STATUS),yes)
+	$(LINK) $(PWD)/i3status_config $(HOME)/.config/i3status/config
 endif
