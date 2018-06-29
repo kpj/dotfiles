@@ -45,3 +45,46 @@ function bak {
         mv "$fname" "$fname_bak"
     done
 }
+
+function retrieve_files {
+    # input checks
+    if [ $# -lt 2 ]; then
+        echo "Usage: $0 <source> [<source>...] <target>"
+        return 1
+    fi
+
+    source_dir_list=("$@")
+    unset "source_dir_list[${#source_dir_list[@]}-1]"  # remove last argument
+
+    target_dir="${@: -1}"  # target is last argument
+
+    # prepare environment
+    mkdir -p "$target_dir"
+
+    # copy files
+    for source_dir in "${source_dir_list[@]}"; do
+        echo " > $source_dir"
+
+        if [[ ! -d "$source_dir" ]]; then
+            echo "\"$source_dir\" does not exist, skipping..."
+            continue
+        fi
+
+        source_name=$(basename $(readlink -f "$source_dir"))
+        for fname in $source_dir/*; do
+            fname="$(basename $fname)"
+            raw_fname="${fname%.*}"
+
+            # robustly find file extension
+            if [[ $fname == *.* ]] ; then
+                fext=".${fname##*.}"
+            else
+                fext=""
+            fi
+            new_fname="${target_dir}/${raw_fname}_${source_name}${fext}"
+
+            echo "$source_dir/$fname -> $new_fname"
+            cp -r "$source_dir/$fname" "$new_fname"
+        done
+    done
+}
