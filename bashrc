@@ -30,6 +30,7 @@ alias slideshow='feh -FZ *'
 alias compile_latex='latexmk -pvc -auxdir=tmp -outdir=tmp -pdf -halt-on-error -shell-escape'
 
 alias pydebug="python -m ipdb -c continue"
+alias load_csv='ipython -c "import sys; import pandas as pd; df = pd.read_csv(sys.argv[4]); print(df.head())" -i'
 alias pip_update_all='pip freeze --local | grep -v "^\-e" | cut -d = -f 1  | xargs -n1 pip install --upgrade --user'
 
 function pdfcrop_self {
