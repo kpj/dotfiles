@@ -10,6 +10,7 @@ USE_MUTT = yes
 USE_TMUX = yes
 USE_IPYTHON = yes
 USE_I3STATUS = yes
+USE_GIT = yes
 
 .PHONY: install
 
@@ -43,4 +44,7 @@ ifeq ($(USE_IPYTHON),yes)
 endif
 ifeq ($(USE_I3STATUS),yes)
 	$(LINK) $(PWD)/i3status_config $(HOME)/.config/i3status/config
+endif
+ifeq ($(USE_GIT),yes)
+	$(LINK) $(PWD)/gitconfig $(HOME)/.gitconfig
 endif
