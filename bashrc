@@ -90,3 +90,16 @@ function retrieve_files {
         done
     done
 }
+
+function count_files {
+    total=0
+    while read dir; do
+        printf "%-25.25s : " "$dir"
+
+        count=$(find "$dir" -type f 2>/dev/null | wc -l)
+        echo $count
+
+        total=$((total + count))
+    done < <(find "$@" -maxdepth 1 -mindepth 1 -type d)
+    echo -e "\nTotal: $total"
+}
