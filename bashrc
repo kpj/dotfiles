@@ -96,7 +96,7 @@ function count_files {
     while read dir; do
         printf "%-25.25s : " "$dir"
 
-        count=$(find "$dir" -type f 2>/dev/null | wc -l)
+        count=$(find "$dir" 2>/dev/null | wc -l)
         echo $count
 
         total=$((total + count))
