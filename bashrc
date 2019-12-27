@@ -92,14 +92,27 @@ function retrieve_files {
 }
 
 function count_files {
+    # check input
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: ${FUNCNAME[0]} <directory>..."
+        return 1
+    fi
+
+    # count files
     total=0
-    while read dir; do
+    for dir in "$@"; do
+        # only consider directories
+        if [[ ! -d "$dir" ]]; then
+            continue
+        fi
+
+        # print count
         printf "%-25.25s : " "$dir"
 
         count=$(find "$dir" 2>/dev/null | wc -l)
         echo $count
 
         total=$((total + count))
-    done < <(find "$@" -maxdepth 1 -mindepth 1 -type d)
+    done
     echo -e "\nTotal: $total"
 }
