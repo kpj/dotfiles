@@ -111,7 +111,7 @@ function directory_statistics {
 
         # compute quantities
         count=$(find "$dir" -printf '.' 2>/dev/null | wc -c)
-        size=$(du -s "$dir" 2>/dev/null | cut -f 1)
+        size=$(du -bs "$dir" 2>/dev/null | cut -f 1)
 
         # truncate directory name for printing (if needed)
         dir_name="$dir"
