@@ -91,7 +91,7 @@ function retrieve_files {
     done
 }
 
-function count_files {
+function directory_statistics {
     # check input
     if [[ $# -eq 0 ]]; then
         echo "Usage: ${FUNCNAME[0]} <directory>..."
@@ -99,20 +99,30 @@ function count_files {
     fi
 
     # count files
-    total=0
+    printf "%25s %25s %25s\n" "Path" "Files" "Size"
+
+    total_count=0
+    total_size=0
     for dir in "$@"; do
         # only consider directories
         if [[ ! -d "$dir" ]]; then
             continue
         fi
 
-        # print count
-        printf "%-25.25s : " "$dir"
+        # compute quantities
+        count=$(find "$dir" -printf '.' 2>/dev/null | wc -c)
+        size=$(du -s "$dir" | cut -f 1)
 
-        count=$(find "$dir" 2>/dev/null | wc -l)
-        echo $count
+        # truncate directory name for printing (if needed)
+        dir_name="$dir"
+        # (( ${#dir_name} > 25 )) && dir_name="${dir_name:0:22}..."
 
-        total=$((total + count))
+        # log result
+        printf "%25s %25d %25d\n" "$dir_name" "$count" "$size"
+
+        # add to total
+        total_count=$((total_count + count))
+        total_size=$((total_size + size))
     done
-    echo -e "\nTotal: $total"
+    printf "%25s %25d %25d\n" "<TOTAL>" "$total_count" "$total_size"
 }
