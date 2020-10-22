@@ -6,6 +6,7 @@
 ##################
 
 export EDITOR=vim
+export PYTHONBREAKPOINT=ipdb.set_trace
 
 
 ###########
