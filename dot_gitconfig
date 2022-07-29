@@ -1,0 +1,9 @@
+[user]
+    name = kpj
+	email = kim.philipp.jablonski@gmail.com
+
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFX  # https://github.com/so-fancy/diff-so-fancy
+
+[alias]
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
