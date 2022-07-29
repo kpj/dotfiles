@@ -1,0 +1,57 @@
+# oh-my-zsh stuff
+ZSH=/usr/share/oh-my-zsh/
+ZSH_THEME="robbyrussell"
+
+CASE_SENSITIVE="true"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="yyyy-mm-dd"
+
+unsetopt inc_append_history
+unsetopt share_history
+
+# fast autocomplete for git
+__git_files () {
+    _wanted files expl 'local files' _files
+}
+
+plugins=(git)
+
+autoload -U colors && colors
+
+RPROMPT="%{$fg[yellow]%}[%D{%Y/%m/%d} | %T]%{$reset_color%}"
+
+# user configuration
+export EDITOR='vim'
+export PYTHONBREAKPOINT=ipdb.set_trace
+
+# aliases
+alias pip_update_all='pip freeze --local | grep -v "^\-e" | cut -d = -f 1  | xargs -n1 pip install --upgrade --user'
+
+# Python stuff
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# fix locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# useful functions
+function pdfcrop_self {
+    for var in "$@"; do
+        echo "> $var"
+        pdfcrop "$var" /tmp/foo.pdf && mv /tmp/foo.pdf "$var"
+    done
+}
+
+alias snakemake_dag="snakemake --dag | dot -Tpng -Gdpi=300 > dag.png"
+
+# final ZSH stuff
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
