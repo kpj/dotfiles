@@ -27,7 +27,7 @@ $ git push
 
 ```bash
 # retrieve dotfiles
-$ chezmoi init https://github.com/kpj/dotfiles/.git
+$ chezmoi init https://github.com/kpj/dotfiles.git
 
 # check which changes would be made
 $ chezmoi diff
