@@ -1,0 +1,36 @@
+music_directory			"/mnt/HD/Multimedia/Musik/data"
+bind_to_address			"any"
+
+playlist_directory		"~/.mpd/playlists"
+db_file                         "~/.mpd/database"
+log_file			"~/.mpd/log"
+pid_file			"~/.mpd/pid"
+state_file			"~/.mpd/state"
+sticker_file			"~/.mpd/sticker.sql"
+
+volume_normalization 		"yes"
+
+audio_output {
+	type			"pulse"
+	name			"MPD PulseAudio Output"
+	server			"localhost"
+}
+
+
+#audio_output {
+# type      			"alsa"
+# name  			"My ALSA Device"
+# device			"hw:0,0"  # optional
+# format      			"44100:16:2"  # optional
+# mixer_type    		"hardware"
+# mixer_device    		"default"
+# mixer_control   		"Headset"
+#}
+
+
+#audio_output {
+# type        			"fifo"
+# name        			"my_fifo"
+# path        			"/tmp/mpd.fifo"
+# format        		"44100:16:1"
+#}
