@@ -20,3 +20,7 @@ EOF
 
 chsh -s $(which zsh) || true # returns 1
 {{ end -}}
+
+# vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
