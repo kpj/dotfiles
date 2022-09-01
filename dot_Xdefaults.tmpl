@@ -1,3 +1,4 @@
+{{- if ne .chezmoi.os "darwin" -}}
 ! Other stuff
 URxvt.background: black
 URxvt.foreground: white
@@ -25,3 +26,4 @@ URxvt.urgentOnBell: True
 ! key bindings
 URxvt.keysym.C-Up: font-size:increase
 URxvt.keysym.C-Down: font-size:decrease
+{{ end -}}
