@@ -1,5 +1,9 @@
 # oh-my-zsh stuff
+{{ if eq .chezmoi.os "darwin" -}}
+ZSH=$HOME/.oh-my-zsh
+{{ else -}}
 ZSH=/usr/share/oh-my-zsh/
+{{ end -}}
 ZSH_THEME="robbyrussell"
 
 CASE_SENSITIVE="true"
@@ -49,7 +53,11 @@ function pdfcrop_self {
 alias snakemake_dag="snakemake --dag | dot -Tpng -Gdpi=300 > dag.png"
 
 # final ZSH stuff
+{{ if eq .chezmoi.os "darwin" -}}
+ZSH_CACHE_DIR=$HOME/Library/Caches/oh-my-zsh
+{{ else -}}
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+{{ end -}}
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
