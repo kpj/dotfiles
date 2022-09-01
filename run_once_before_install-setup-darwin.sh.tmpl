@@ -1,0 +1,21 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+
+brew "languagetool"
+brew "zsh"
+brew "pyenv"
+brew "diff-so-fancy"
+brew "tig"
+
+cask "caffeine"
+cask "iterm2"
+cask "visual-studio-code"
+cask "google-chrome"
+cask "rectangle"
+cask "whatsapp"
+EOF
+
+chsh -s $(which zsh) || true # returns 1
+{{ end -}}
