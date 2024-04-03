@@ -5,6 +5,28 @@ Dotfiles organized using [chezmoi](https://www.chezmoi.io/).
 
 ## Usage
 
+### Use dotfiles on new machine
+
+Quickstart:
+
+```bash
+$ xcode-select --install
+$ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply kpj
+```
+
+Or (after setting up environment):
+
+```bash
+# retrieve dotfiles
+$ chezmoi init git@github.com:kpj/dotfiles.git
+
+# check which changes would be made
+$ chezmoi diff
+
+# apply them
+$ chezmoi apply -v
+```
+
 ### Update existing dotfile
 
 ```bash
@@ -21,29 +43,6 @@ $ git diff
 $ git add <file>
 $ git commit
 $ git push
-```
-
-### Use dotfiles on new machine
-
-Quickstart:
-
-```bash
-$ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply kpj
-```
-
-Or:
-
-```bash
-# ... install chezmoi
-
-# retrieve dotfiles
-$ chezmoi init git@github.com:kpj/dotfiles.git
-
-# check which changes would be made
-$ chezmoi diff
-
-# apply them
-$ chezmoi apply -v
 ```
 
 ### Update dotfiles from remote
