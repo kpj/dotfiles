@@ -25,7 +25,17 @@ $ git push
 
 ### Use dotfiles on new machine
 
+Quickstart:
+
 ```bash
+$ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply kpj
+```
+
+Or:
+
+```bash
+# ... install chezmoi
+
 # retrieve dotfiles
 $ chezmoi init git@github.com:kpj/dotfiles.git
 
