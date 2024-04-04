@@ -13,6 +13,7 @@ fi
 brew bundle --no-lock --file=/dev/stdin <<EOF
 brew "languagetool"
 brew "zsh"
+brew "powerlevel10k"
 brew "pyenv"
 brew "diff-so-fancy"
 brew "tig"
@@ -37,6 +38,9 @@ cask "syncthing"
 cask "r"
 cask "rstudio"
 EOF
+
+# install powerlevel10k
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 {{ end }}
 
 # enable zsh and omz
